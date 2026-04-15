@@ -1,19 +1,9 @@
-const express = require("express")
+require("dotenv").config()
 
-const app = express()
+const app = require("./src/app")
 
+const PORT = process.env.PORT || 8080
 
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }));
-
-
-app.post("/" , (req, res)=>{
-  console.log(req.body)
-  res.status(200)
-  res.send("<h1> For testing purposes <h1>")
-}) ;
-const PORT = 8080
-app.listen(PORT , ()=>{
+app.listen(PORT, () => {
   console.log(`server is listening on localhost:${PORT}`)
-
 })
