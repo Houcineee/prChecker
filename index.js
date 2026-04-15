@@ -9,8 +9,11 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/" , (req, res)=>{
   console.log(req.body)
+  res.status(200)
+  res.send("<h1> all good <h1>")
 }) ;
 const PORT = 8080
 app.listen(PORT , ()=>{
   console.log(`server is listening on localhost:${PORT}`)
+
 })
